@@ -1,0 +1,39 @@
+luka-pay/
+│
+├── index.html
+├── README.md
+├── .gitignore
+│
+├── frontend/
+│   ├── css/
+│   │   └── style.css
+│   │
+│   ├── js/
+│   │   ├── app.js
+│   │   ├── auth.js
+│   │   ├── wallet.js
+│   │   └── transactions.js
+│   │
+│   └── assets/
+│       └── logo.png
+│
+├── backend/
+│   ├── server.js
+│   ├── config/
+│   │   └── database.js
+│   │
+│   ├── routes/
+│   │   ├── auth.routes.js
+│   │   ├── wallet.routes.js
+│   │   └── transaction.routes.js
+│   │
+│   ├── controllers/
+│   │   ├── auth.controller.js
+│   │   ├── wallet.controller.js
+│   │   └── transaction.controller.js
+│   │
+│   └── middleware/
+│       └── auth.middleware.js
+│
+└── database/
+    └── schema.sql
