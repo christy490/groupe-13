@@ -1,50 +1,30 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+async function loadWallet() {
 
-    <title>LUKA PAY - Portefeuille électronique</title>
+    try {
+        const response = await fetch(
+            "/api/wallet/balance"
+        );
 
-    <link rel="stylesheet" href="frontend/css/style.css">
-</head>
+        if (!response.ok) {
+            throw new Error("Impossible de charger le solde");
+        }
 
-<body>
+        const data = await response.json();
 
-    <header>
-        <h1>LUKA PAY</h1>
-        <p>Votre argent, votre liberté.</p>
-    </header>
+        document.getElementById("balance")
+            .textContent = data.balance + " FCFA";
 
-    <main>
-        <section class="wallet">
-            <h2>Mon portefeuille</h2>
+    } catch (error) {
+        console.error(error);
+    }
+}
 
-            <p>Solde disponible</p>
+function sendMoney() {
+    alert("Ouverture du formulaire d'envoi");
+}
 
-            <h1 id="balance">0 FCFA</h1>
+function receiveMoney() {
+    alert("Ouverture du formulaire de réception");
+}
 
-            <div class="actions">
-                <button onclick="sendMoney()">
-                    Envoyer
-                </button>
-
-                <button onclick="receiveMoney()">
-                    Recevoir
-                </button>
-            </div>
-        </section>
-
-        <section>
-            <h2>Transactions récentes</h2>
-            <div id="transactions"></div>
-        </section>
-    </main>
-
-    <script src="frontend/js/app.js"></script>
-    <script src="frontend/js/wallet.js"></script>
-    <script src="frontend/js/transactions.js"></script>
-
-</body>
-</html>
+loadWallet();
