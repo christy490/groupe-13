@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>LUKA PAY - Portefeuille électronique</title>
+
+    <link rel="stylesheet" href="frontend/css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>LUKA PAY</h1>
+        <p>Votre argent, votre liberté.</p>
+    </header>
+
+    <main>
+        <section class="wallet">
+            <h2>Mon portefeuille</h2>
+
+            <p>Solde disponible</p>
+
+            <h1 id="balance">0 FCFA</h1>
+
+            <div class="actions">
+                <button onclick="sendMoney()">
+                    Envoyer
+                </button>
+
+                <button onclick="receiveMoney()">
+                    Recevoir
+                </button>
+            </div>
+        </section>
+
+        <section>
+            <h2>Transactions récentes</h2>
+            <div id="transactions"></div>
+        </section>
+    </main>
+
+    <script src="frontend/js/app.js"></script>
+    <script src="frontend/js/wallet.js"></script>
+    <script src="frontend/js/transactions.js"></script>
+
+</body>
+</html>
